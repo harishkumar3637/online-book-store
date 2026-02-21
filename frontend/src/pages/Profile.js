@@ -16,7 +16,7 @@ function Profile() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await API.get("/orders/myorders", {
+      const res = await API.get("/api/orders/myorders", {
         headers: { Authorization: token }
       });
 

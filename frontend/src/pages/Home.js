@@ -23,10 +23,7 @@ function Home() {
            }
         };
 
-  // const loadRecommended = async () => {
-  //   const res = await API.get("/books/search?query=bestseller");
-  //   setBooks(res.data || []);
-  // };
+
 
   const search = async () => {
     const res = await API.get(`/api/books/search?query=${query}`);
