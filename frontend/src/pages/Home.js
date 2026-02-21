@@ -29,7 +29,7 @@ function Home() {
   // };
 
   const search = async () => {
-    const res = await API.get(`/api/books/search?query=${query}`);
+    const res = await API.get(`/books/search?query=${query}`);
     setBooks(res.data || []);
   };
   
