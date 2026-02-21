@@ -16,7 +16,7 @@ function Home() {
 
          const loadRecommended = async () => {
         try {
-           const res = await API.get("/api/books/search?query=bestseller");
+           const res = await API.get("/api/books/search?query=top");
             setBooks(res.data || []);
             } catch (error) {
           console.log("Too many requests, try again later");
@@ -29,7 +29,7 @@ function Home() {
   // };
 
   const search = async () => {
-    const res = await API.get(`/books/search?query=${query}`);
+    const res = await API.get(`/api/books/search?query=${query}`);
     setBooks(res.data || []);
   };
   

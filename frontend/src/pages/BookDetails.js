@@ -20,7 +20,7 @@ function BookDetails() {
   }, [book]);
 
   const loadSimilar = async (category) => {
-    const res = await API.get(`/books/search?query=${category}`);
+    const res = await API.get(`/api/books/search?query=${category}`);
     setSimilarBooks(res.data || []);
   };
 

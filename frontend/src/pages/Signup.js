@@ -18,7 +18,7 @@ function Signup() {
     }
 
     try {
-      await API.post("/auth/signup", { name, email, password });
+      await API.post("/api/auth/signup", { name, email, password });
 
       toast.success("Account Created Successfully 🎉");
 
