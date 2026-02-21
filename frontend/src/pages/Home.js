@@ -14,13 +14,22 @@ function Home() {
     loadRecommended();
   }, []);
 
-  const loadRecommended = async () => {
-    const res = await API.get("/books/search?query=bestseller");
-    setBooks(res.data || []);
-  };
+         const loadRecommended = async () => {
+        try {
+           const res = await API.get("/api/books/search?query=bestseller");
+            setBooks(res.data || []);
+            } catch (error) {
+          console.log("Too many requests, try again later");
+           }
+        };
+
+  // const loadRecommended = async () => {
+  //   const res = await API.get("/books/search?query=bestseller");
+  //   setBooks(res.data || []);
+  // };
 
   const search = async () => {
-    const res = await API.get(`/books/search?query=${query}`);
+    const res = await API.get(`/api/books/search?query=${query}`);
     setBooks(res.data || []);
   };
   
